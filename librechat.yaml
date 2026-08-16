@@ -1,4 +1,4 @@
-version: 1.3.14
+version: "1.3.14"
 cache: true
 
 endpoints:
@@ -9,13 +9,15 @@ endpoints:
         - "gemini-2.0-flash"
         - "gemini-1.5-pro"
         - "gemini-1.5-flash"
+      fetch: false
 
   custom:
     - name: "OpenRouter"
       apiKey: "${OPENROUTER_KEY}"
       baseURL: "https://openrouter.ai/api/v1"
       models:
-        default: ["meta-llama/llama-3-70b-instruct"]
+        default: 
+          - "meta-llama/llama-3-70b-instruct"
         fetch: true
       modelDisplayLabel: "OpenRouter"
 
@@ -23,7 +25,8 @@ endpoints:
       apiKey: "${DEEPSEEK_API_KEY}"
       baseURL: "https://api.deepseek.com/v1"
       models:
-        default: ["deepseek-chat"]
+        default: 
+          - "deepseek-chat"
         fetch: true
       modelDisplayLabel: "DeepSeek"
 
@@ -31,7 +34,8 @@ endpoints:
       apiKey: "${GROQ_API_KEY}"
       baseURL: "https://api.groq.com/openai/v1"
       models:
-        default: ["llama-3.3-70b-versatile"]
+        default: 
+          - "llama-3.3-70b-versatile"
         fetch: true
       modelDisplayLabel: "Groq"
 
@@ -39,7 +43,8 @@ endpoints:
       apiKey: "${CEREBRAS_API_KEY}"
       baseURL: "https://api.cerebras.ai/v1"
       models:
-        default: ["llama3.1-70b"]
+        default: 
+          - "llama3.1-70b"
         fetch: true
       modelDisplayLabel: "Cerebras"
 
@@ -47,7 +52,8 @@ endpoints:
       apiKey: "${COHERE_API_KEY}"
       baseURL: "https://api.cohere.com/v1"
       models:
-        default: ["command-r-plus"]
+        default: 
+          - "command-r-plus"
         fetch: true
       modelDisplayLabel: "Cohere"
 
@@ -55,11 +61,33 @@ endpoints:
       apiKey: "${MISTRAL_API_KEY}"
       baseURL: "https://api.mistral.ai/v1"
       models:
-        default: ["mistral-large-latest"]
+        default: 
+          - "mistral-large-latest"
         fetch: true
-      dropParams: ['stop', 'user', 'frequency_penalty', 'presence_penalty']
+      dropParams: 
+        - "stop"
+        - "user"
+        - "frequency_penalty"
+        - "presence_penalty"
       modelDisplayLabel: "Mistral"
 
+    - name: "Moonshot"
+      apiKey: "${MOONSHOT_API_KEY}"
+      baseURL: "https://api.moonshot.cn/v1"
+      models:
+        default: 
+          - "moonshot-v1-8k"
+        fetch: true
+      modelDisplayLabel: "Moonshot"
+
+    - name: "Qwen"
+      apiKey: "${QWEN_API_KEY}"
+      baseURL: "https://dashscope-intl.aliyuncs.com/compatible-mode/v1"
+      models:
+        default: 
+          - "qwen-max"
+        fetch: true
+      modelDisplayLabel: "Qwen"
     - name: "Moonshot"
       apiKey: "${MOONSHOT_API_KEY}"
       baseURL: "https://api.moonshot.cn/v1"
