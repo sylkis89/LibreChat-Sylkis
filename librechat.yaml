@@ -6,9 +6,9 @@ endpoints:
     apiKey: "${GOOGLE_KEY}"
     models:
       default:
-        - "gemini-3.6-flash"
-        - "gemini-3.5-flash"
-        - "gemini-3.5-flash-lite"
+        - "gemini-2.0-flash"
+        - "gemini-1.5-pro"
+        - "gemini-1.5-flash"
       fetch: false
 
   custom:
@@ -60,6 +60,34 @@ endpoints:
     - name: "Mistral"
       apiKey: "${MISTRAL_API_KEY}"
       baseURL: "https://api.mistral.ai/v1"
+      models:
+        default:
+          - "mistral-large-latest"
+        fetch: true
+      dropParams:
+        - "stop"
+        - "user"
+        - "frequency_penalty"
+        - "presence_penalty"
+      modelDisplayLabel: "Mistral"
+
+    - name: "Moonshot"
+      apiKey: "${MOONSHOT_API_KEY}"
+      baseURL: "https://api.moonshot.cn/v1"
+      models:
+        default:
+          - "moonshot-v1-8k"
+        fetch: true
+      modelDisplayLabel: "Moonshot"
+
+    - name: "Qwen"
+      apiKey: "${QWEN_API_KEY}"
+      baseURL: "https://dashscope-intl.aliyuncs.com/compatible-mode/v1"
+      models:
+        default:
+          - "qwen-max"
+        fetch: true
+      modelDisplayLabel: "Qwen"      baseURL: "https://api.mistral.ai/v1"
       models:
         default:
           - "mistral-large-latest"
