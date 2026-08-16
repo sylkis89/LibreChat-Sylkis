@@ -1,0 +1,52 @@
+version: 1.3.5
+cache: true
+endpoints:
+  custom:
+    - name: "OpenRouter"
+      apiKey: "${OPENROUTER_KEY}"
+      baseURL: "https://openrouter.ai/api/v1"
+      models:
+        default: ["meta-llama/llama-3-70b-instruct"]
+      fetch: true
+    - name: "DeepSeek"
+      apiKey: "${DEEPSEEK_API_KEY}"
+      baseURL: "https://api.deepseek.com/v1"
+      models:
+        default: ["deepseek-chat"]
+      fetch: true
+    - name: "Groq"
+      apiKey: "${GROQ_API_KEY}"
+      baseURL: "https://api.groq.com/openai/v1"
+      models:
+        default: ["llama-3.3-70b-versatile"]
+      fetch: true
+    - name: "Cerebras"
+      apiKey: "${CEREBRAS_API_KEY}"
+      baseURL: "https://api.cerebras.ai/v1"
+      models:
+        default: ["llama3.1-70b"]
+      fetch: true
+    - name: "Cohere"
+      apiKey: "${COHERE_API_KEY}"
+      baseURL: "https://api.cohere.com/v1"
+      models:
+        default: ["command-r-plus"]
+      fetch: true
+    - name: "Mistral"
+      apiKey: "${MISTRAL_API_KEY}"
+      baseURL: "https://api.mistral.ai/v1"
+      models:
+        default: ["mistral-large-latest"]
+      fetch: true
+    - name: "Moonshot"
+      apiKey: "${MOONSHOT_API_KEY}"
+      baseURL: "https://api.moonshot.cn/v1"
+      models:
+        default: ["moonshot-v1-8k"]
+      fetch: true
+    - name: "Qwen"
+      apiKey: "${QWEN_API_KEY}"
+      baseURL: "https://dashscope-intl.aliyuncs.com/compatible-mode/v1"
+      models:
+        default: ["qwen-max"]
+      fetch: true
